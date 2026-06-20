@@ -1,6 +1,5 @@
 ---
-
 deployment:
-tasks:
-- export DEPLOYPATH=/home/ebookpac/saas.ebookpackstore.com
-- /bin/cp -R frontend/dist/* $DEPLOYPATH
+  tasks:
+    - export DEPLOYPATH=/home/ebookpac/app.ebookpackstore.com/
+    - /bin/cp -R frontend/dist/* $DEPLOYPATH
