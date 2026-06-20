@@ -1,0 +1,329 @@
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import Button from "../components/Button";
+import API_URL from "../services/api";
+
+import {
+  getUserPages,
+  updateUserPage,
+  getAvailableLinks,
+  getAvailableQrStyles,
+  publishPage,
+} from "../services/userPageService";
+
+const APP_URL = "https://app.ebookpackstore.com";
+
+export default function PageEditor() {
+  const { pageId, id } = useParams();
+  const realPageId = pageId || id;
+
+  const navigate = useNavigate();
+
+  const [page, setPage] = useState(null);
+  const [title, setTitle] = useState("");
+  const [message, setMessage] = useState("");
+  const [dedication, setDedication] = useState("");
+
+  const [links, setLinks] = useState([]);
+  const [qrData, setQrData] = useState(null);
+
+  const [selectedSlug, setSelectedSlug] = useState("");
+  const [customSlug, setCustomSlug] = useState("");
+  const [selectedQrStyle, setSelectedQrStyle] = useState("");
+
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+
+  useEffect(() => {
+    loadPage();
+  }, [realPageId]);
+
+  const loadPage = async () => {
+    try {
+      setLoading(true);
+
+      const pages = await getUserPages();
+
+      const found = pages.find(
+        (item) => Number(item.id) === Number(realPageId),
+      );
+
+      if (!found) {
+        alert("Página no encontrada");
+        navigate("/my-pages");
+        return;
+      }
+
+      const editorUrl = found.template?.editor_url;
+
+      if (editorUrl) {
+        const fullEditorUrl = editorUrl.startsWith("http")
+          ? editorUrl
+          : `${API_URL}${editorUrl}`;
+
+        window.location.replace(
+          `/zip-editor?editor=${encodeURIComponent(
+            fullEditorUrl,
+          )}&page_id=${found.id}&template_id=${found.template_id}`,
+        );
+
+        return;
+      }
+
+      setPage(found);
+      setTitle(found.title || "");
+
+      let content = {};
+
+      try {
+        content = found.content ? JSON.parse(found.content) : {};
+      } catch {
+        content = found.data_json || {};
+      }
+
+      setMessage(content.message || content.mensaje || "");
+      setDedication(content.dedication || content.dedicatoria || "");
+
+      const availableLinks = await getAvailableLinks(realPageId);
+      const availableQrStyles = await getAvailableQrStyles(realPageId);
+
+      setLinks(Array.isArray(availableLinks) ? availableLinks : []);
+      setQrData(availableQrStyles || null);
+
+      if (availableLinks?.length > 0) {
+        setSelectedSlug(availableLinks[0].slug);
+      }
+
+      if (availableQrStyles?.styles?.length > 0) {
+        setSelectedQrStyle(availableQrStyles.styles[0].id);
+      }
+    } catch (error) {
+      alert(error.message || "Error cargando página");
+      navigate("/my-pages");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSave = async () => {
+    try {
+      setSaving(true);
+
+      const content = {
+        message,
+        dedication,
+      };
+
+      await updateUserPage(realPageId, {
+        title,
+        content: JSON.stringify(content),
+        data_json: content,
+        is_published: false,
+      });
+
+      alert("Página guardada correctamente");
+    } catch (error) {
+      alert(error.message || "Error al guardar");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handlePublish = async () => {
+    try {
+      setSaving(true);
+
+      const content = {
+        message,
+        dedication,
+      };
+
+      await updateUserPage(realPageId, {
+        title,
+        content: JSON.stringify(content),
+        data_json: content,
+      });
+
+      const finalSlug = customSlug.trim() || selectedSlug;
+
+      if (!finalSlug) {
+        alert("Selecciona un enlace para publicar");
+        return;
+      }
+
+      const response = await publishPage(realPageId, {
+        slug: finalSlug,
+        qr_style_id: selectedQrStyle || null,
+      });
+
+      alert(response.message || "Página publicada correctamente");
+
+      navigate("/my-pages");
+    } catch (error) {
+      alert(error.message || "Error al publicar");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <main className="panel-main">
+        <section className="panel-shell">
+          <h1>Cargando editor...</h1>
+        </section>
+      </main>
+    );
+  }
+
+  const canCustomLink = links.length > 1;
+  const canCustomQr = Boolean(qrData?.custom_qr);
+
+  return (
+    <main className="panel-main">
+      <section className="panel-shell">
+        <div className="panel-top">
+          <div>
+            <h1>Editar página</h1>
+            <p>
+              Plantilla:{" "}
+              {page?.template?.title || page?.template_title || "Plantilla"}
+            </p>
+          </div>
+
+          <Button to="/my-pages" variant="secondary">
+            Volver
+          </Button>
+        </div>
+
+        <div className="dashboard-card editor-card">
+          <label className="editor-label">
+            Título de la página
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="Ej: Para mi amor"
+            />
+          </label>
+
+          <label className="editor-label">
+            Mensaje principal
+            <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Escribe un mensaje especial..."
+              rows="5"
+            />
+          </label>
+
+          <label className="editor-label">
+            Dedicatoria
+            <textarea
+              value={dedication}
+              onChange={(e) => setDedication(e.target.value)}
+              placeholder="Escribe tu dedicatoria..."
+              rows="8"
+            />
+          </label>
+
+          <div className="publish-box">
+            <h2>Publicar dedicatoria ❤️</h2>
+            <p>Elige el enlace y QR según tu plan.</p>
+
+            <h3>🔗 Enlace</h3>
+
+            {links.map((link) => (
+              <label key={link.id} className="publish-option">
+                <input
+                  type="radio"
+                  name="slug"
+                  value={link.slug}
+                  checked={selectedSlug === link.slug}
+                  onChange={(e) => {
+                    setSelectedSlug(e.target.value);
+                    setCustomSlug("");
+                  }}
+                />
+                <span>{link.label || link.slug}</span>
+                <small>
+                  {APP_URL}/p/{link.slug}
+                </small>
+              </label>
+            ))}
+
+            {canCustomLink ? (
+              <label className="editor-label">
+                Enlace personalizado
+                <input
+                  type="text"
+                  value={customSlug}
+                  onChange={(e) => setCustomSlug(e.target.value)}
+                  placeholder="de-amilkar-para-nayeli"
+                />
+              </label>
+            ) : (
+              <div className="locked-feature">
+                🔒 Personaliza tu enlace con Premium.
+                <br />
+                Ejemplo: de-amilkar-para-nayeli
+              </div>
+            )}
+
+            <h3>📱 Estilo QR</h3>
+
+            {qrData?.styles?.map((style) => {
+              const locked = !canCustomQr && style.plan_level !== "free";
+
+              return (
+                <label
+                  key={style.id}
+                  className={`publish-option ${locked ? "is-locked" : ""}`}
+                >
+                  <input
+                    type="radio"
+                    name="qr_style"
+                    value={style.id}
+                    disabled={locked}
+                    checked={Number(selectedQrStyle) === Number(style.id)}
+                    onChange={(e) => setSelectedQrStyle(e.target.value)}
+                  />
+                  <span>
+                    {locked ? "🔒 " : ""}
+                    {style.name}
+                  </span>
+                </label>
+              );
+            })}
+
+            {!canCustomQr && (
+              <div className="locked-feature">
+                🔒 QR con corazones, neón y logo disponible con Premium.
+              </div>
+            )}
+          </div>
+
+          <div className="editor-actions">
+            <button
+              type="button"
+              className="button button-primary"
+              onClick={handleSave}
+              disabled={saving}
+            >
+              {saving ? "Guardando..." : "Guardar"}
+            </button>
+
+            <button
+              type="button"
+              className="button button-primary"
+              onClick={handlePublish}
+              disabled={saving}
+            >
+              {saving ? "Publicando..." : "Publicar"}
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

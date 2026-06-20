@@ -1,0 +1,262 @@
+/* =========================
+   BASE - DEV AGS Liquid Glass
+========================= */
+
+:root {
+  color-scheme: dark;
+
+  --bg-900: #030305;
+  --bg-800: #070713;
+  --bg-700: #0d1023;
+
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.72);
+  --muted-2: rgba(255, 255, 255, 0.52);
+
+  --accent-pink: #ff4db8;
+  --accent-pink-600: #ff1fa6;
+  --accent-pink-400: rgba(255, 77, 184, 0.35);
+
+  --primary: #ec4899;
+  --primary-2: #8b5cf6;
+  --accent: #22d3ee;
+  --danger: #fb7185;
+
+  --header-height: 72px;
+
+  --glass-bg: rgba(255, 255, 255, 0.055);
+  --glass-bg-strong: rgba(255, 255, 255, 0.085);
+  --glass-border: rgba(255, 90, 190, 0.3);
+  --glass-outline: rgba(255, 29, 141, 0.45);
+  --glass-blur: 24px;
+
+  --radius: 24px;
+  --radius-lg: 30px;
+
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  --neon-shadow:
+    0 0 18px rgba(255, 20, 157, 0.35), 0 0 60px rgba(255, 20, 157, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  scroll-behavior: smooth;
+  background: #030305;
+}
+
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  color: var(--text);
+
+  background:
+    linear-gradient(rgba(3, 3, 8, 0.58), rgba(3, 3, 8, 0.78)),
+    url("/design/background-space.png");
+
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(255, 0, 140, 0.16),
+      transparent 36%
+    ),
+    radial-gradient(
+      circle at 82% 25%,
+      rgba(255, 0, 180, 0.18),
+      transparent 34%
+    ),
+    radial-gradient(circle at 50% 85%, rgba(120, 0, 255, 0.12), transparent 40%);
+
+  mix-blend-mode: screen;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image: radial-gradient(
+    rgba(255, 90, 190, 0.25) 1px,
+    transparent 1px
+  );
+
+  background-size: 34px 34px;
+  opacity: 0.1;
+
+  mask-image: linear-gradient(to bottom, #000, transparent 92%);
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+.app-shell {
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* =========================
+   GLASS UTILITIES
+========================= */
+
+.glass,
+.dashboard-card,
+.panel-card,
+.wallet-card,
+.payment-card,
+.checkout-card,
+.subscribe-premium-box,
+.premium-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    ),
+    radial-gradient(circle at 80% 20%, rgba(255, 47, 168, 0.1), transparent 35%);
+
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+
+  box-shadow:
+    var(--neon-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.2);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.2);
+}
+
+.glass-strong {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.035)
+  );
+
+  border: 1px solid var(--glass-outline);
+}
+
+.card {
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  transition:
+    transform 0.28s cubic-bezier(0.2, 0.9, 0.2, 1),
+    box-shadow 0.28s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.glow-border {
+  position: relative;
+}
+
+.glow-border::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: -1;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 29, 141, 0.16),
+    transparent
+  );
+
+  filter: blur(12px);
+  opacity: 0.9;
+}
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

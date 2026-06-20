@@ -1,0 +1,496 @@
+/* =========================
+   WALLET - LIQUID GLASS CLEAN
+========================= */
+
+:root {
+  --wallet-pink: #ff2fa8;
+  --wallet-pink-2: #ff5fc1;
+  --wallet-border: rgba(255, 47, 168, 0.22);
+  --wallet-text: rgba(255, 255, 255, 0.78);
+  --wallet-radius: 28px;
+}
+
+/* CONTENEDOR */
+.wallet-page {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* HEADER WALLET */
+.wallet-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.wallet-mini {
+  color: var(--wallet-pink);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.wallet-top h1 {
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 950;
+  margin: 0;
+}
+
+.wallet-coins {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--wallet-pink), var(--wallet-pink-2));
+  color: #08010a;
+  font-weight: 950;
+  box-shadow: 0 0 30px rgba(255, 47, 168, 0.35);
+}
+
+/* BALANCE */
+.wallet-balance,
+.recharge-panel,
+.wallet-history-card,
+.wallet-history-empty {
+  border-radius: var(--wallet-radius);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    ),
+    radial-gradient(circle at 80% 20%, rgba(255, 47, 168, 0.1), transparent 35%);
+  border: 1px solid var(--wallet-border);
+  box-shadow:
+    0 0 22px rgba(255, 20, 157, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(26px);
+}
+
+.wallet-balance {
+  padding: 28px;
+}
+
+.wallet-balance span,
+.wallet-balance p {
+  color: var(--wallet-text);
+}
+
+.wallet-balance strong {
+  display: block;
+  margin: 10px 0;
+  color: #fff;
+  font-size: 3.2rem;
+  font-weight: 950;
+}
+
+/* BOTONES */
+.wallet-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.wallet-btn-primary,
+.wallet-btn-secondary {
+  min-height: 50px;
+  padding: 0 22px;
+  border-radius: 16px;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+.wallet-btn-primary {
+  background: linear-gradient(90deg, var(--wallet-pink), var(--wallet-pink-2));
+  color: #08010a;
+  box-shadow: 0 0 24px rgba(255, 47, 168, 0.35);
+}
+
+.wallet-btn-secondary {
+  background: rgba(255, 255, 255, 0.045);
+  color: #fff;
+  border: 1px solid var(--wallet-border);
+}
+
+/* TIENDA */
+.recharge-panel {
+  padding: 26px;
+}
+
+.recharge-panel h2 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+.wallet-section-title {
+  margin: 16px 0;
+  color: var(--wallet-pink);
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* GRID MONEDAS */
+.coins-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.coin-card {
+  position: relative;
+  min-height: 230px;
+  padding: 24px 18px;
+  border-radius: 26px;
+  border: 1px solid var(--wallet-border);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    ),
+    radial-gradient(
+      circle at 70% 20%,
+      rgba(255, 47, 168, 0.12),
+      transparent 38%
+    );
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: 0.25s ease;
+}
+
+.coin-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 47, 168, 0.5);
+  box-shadow:
+    0 0 35px rgba(255, 47, 168, 0.32),
+    0 24px 70px rgba(0, 0, 0, 0.55);
+}
+
+.coin-card::before,
+.coin-card::after {
+  content: none !important;
+}
+
+.coin-icon {
+  width: 74px;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 8px;
+  border-radius: 50%;
+  font-size: 42px;
+  background: radial-gradient(
+    circle at 30% 25%,
+    #fff6b8,
+    #ffcc33 35%,
+    #ff9f00 70%
+  );
+  box-shadow:
+    0 0 25px rgba(255, 196, 0, 0.9),
+    0 0 40px rgba(255, 196, 0, 0.4),
+    inset 0 3px 8px rgba(255, 255, 255, 0.8);
+}
+
+.coin-card strong {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 950;
+  line-height: 1.25;
+}
+
+.coin-price {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 850;
+}
+
+.coin-price::before {
+  content: "Precio ";
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.coin-buy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  min-height: 42px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--wallet-pink), var(--wallet-pink-2));
+  color: #08010a;
+  font-weight: 950;
+  box-shadow: 0 0 20px rgba(255, 47, 168, 0.35);
+}
+
+.coin-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ffd34d, #ffb300);
+  color: #1b1200;
+  font-size: 0.7rem;
+  font-weight: 950;
+}
+
+.coin-card.popular {
+  border-color: rgba(255, 47, 168, 0.38);
+}
+
+/* HISTORIAL */
+.wallet-history {
+  margin-top: 30px;
+}
+
+.section-heading.centered {
+  text-align: center;
+}
+
+.section-heading.centered .eyebrow {
+  display: inline-flex;
+  padding: 7px 15px;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(255, 47, 168, 0.1);
+  border: 1px solid var(--wallet-border);
+  font-weight: 900;
+  font-size: 0.75rem;
+}
+
+.section-heading.centered h2 {
+  margin: 14px 0 8px;
+  color: var(--wallet-pink);
+  font-size: 2.5rem;
+  font-weight: 950;
+}
+
+.section-heading.centered p {
+  color: var(--wallet-text);
+}
+
+.wallet-history-list {
+  margin-top: 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.wallet-history-empty {
+  padding: 34px;
+  text-align: center;
+  color: var(--wallet-text);
+}
+
+.wallet-history-card {
+  padding: 20px;
+}
+
+.wallet-history-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.wallet-history-top strong {
+  color: #fff;
+}
+
+.wallet-history-card span {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 950;
+}
+
+.wallet-history-card.pending span {
+  background: rgba(255, 193, 7, 0.14);
+  color: #ffc107;
+}
+
+.wallet-history-card.paid span {
+  background: rgba(34, 197, 94, 0.14);
+  color: #22c55e;
+}
+
+.wallet-history-card.rejected span {
+  background: rgba(239, 68, 68, 0.14);
+  color: #ef4444;
+}
+
+.wallet-history-card p {
+  color: var(--wallet-text);
+}
+
+/* PLANES DENTRO DE WALLET */
+.wallet-plans-section {
+  margin-top: 44px;
+  padding-top: 34px;
+  border-top: 1px solid rgba(255, 47, 168, 0.14);
+}
+
+.wallet-plans-section .plans-grid {
+  width: min(980px, 100%);
+  margin: 2rem auto 0;
+}
+
+.price,
+.gold-price,
+.plan-price {
+  display: none !important;
+}
+
+.plan-price-clean {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0 20px;
+}
+
+.plan-coin-icon {
+  font-size: 42px;
+  line-height: 1;
+  filter: drop-shadow(0 0 10px rgba(255, 196, 0, 0.8))
+    drop-shadow(0 0 20px rgba(255, 196, 0, 0.4));
+}
+
+.plan-price-clean strong {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.free-price {
+  color: #fff;
+  font-size: 2.6rem;
+}
+
+.price-label {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+  font-weight: 850;
+}
+
+.plan.highlighted {
+  transform: scale(1.04);
+  border: 1px solid rgba(255, 47, 168, 0.5);
+  box-shadow:
+    0 0 30px rgba(255, 47, 168, 0.35),
+    0 0 80px rgba(255, 47, 168, 0.15);
+}
+
+.plan-button {
+  margin-top: auto;
+  width: 100%;
+  min-height: 52px;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  font-weight: 950;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .coins-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .wallet-page {
+    padding: 22px 14px;
+  }
+
+  .wallet-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wallet-top h1 {
+    font-size: 2rem;
+  }
+
+  .wallet-actions {
+    flex-direction: column;
+  }
+
+  .wallet-btn-primary,
+  .wallet-btn-secondary {
+    width: 100%;
+  }
+
+  .coins-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .coin-card {
+    min-height: 220px;
+  }
+
+  .section-heading.centered h2 {
+    font-size: 2rem;
+  }
+
+  .plan.highlighted {
+    transform: none;
+  }
+}
+
+.wallet-btn-secondary {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.wallet-page,
+.wallet-top,
+.wallet-balance,
+.wallet-actions,
+.recharge-panel {
+  position: relative;
+}
+
+.wallet-actions {
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+.wallet-btn-primary,
+.wallet-btn-secondary {
+  position: relative;
+  z-index: 10000;
+  pointer-events: auto;
+  border: 0;
+}
+
+.wallet-btn-secondary {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

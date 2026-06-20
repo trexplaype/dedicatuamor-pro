@@ -1,0 +1,1173 @@
+.mobile-app-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(255, 77, 184, 0.28),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(139, 92, 246, 0.22),
+      transparent 40%
+    ),
+    #030305;
+  color: #fff;
+}
+
+.mobile-content {
+  padding-top: 132px;
+  padding-bottom: 92px;
+}
+
+/* HEADER FIJO */
+.mobile-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 118px;
+  z-index: 9999;
+  padding: 14px;
+  background: rgba(10, 5, 18, 0.95);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 77, 184, 0.28);
+}
+
+.mobile-header-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-logo {
+  margin-right: auto;
+  color: #ff4db8;
+  font-size: 19px;
+  font-weight: 900;
+  text-decoration: none;
+  text-shadow: 0 0 14px rgba(255, 77, 184, 0.7);
+}
+
+.mobile-coins {
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 77, 184, 0.25);
+}
+
+.mobile-user-info {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.mobile-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ff4db8, #8b5cf6);
+}
+
+.mobile-user-text strong {
+  display: block;
+  max-width: 74px;
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mobile-user-text small {
+  display: block;
+  margin-top: 3px;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.mobile-search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* BOTTOM NAV */
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 76px;
+  z-index: 9999;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: rgba(5, 5, 10, 0.94);
+  border-top: 1px solid rgba(255, 77, 184, 0.28);
+  backdrop-filter: blur(18px);
+}
+
+.mobile-bottom-nav a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-direction: column;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.mobile-bottom-nav svg {
+  font-size: 20px;
+}
+
+.mobile-bottom-nav a.active {
+  color: #ff4db8;
+}
+
+/* PAGES */
+.mobile-page {
+  padding: 20px;
+}
+
+.mobile-page-header {
+  margin-bottom: 18px;
+}
+
+.mobile-page-header h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.mobile-page-header p {
+  margin: 6px 0 0;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* TEMPLATES */
+.mobile-template-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.mobile-template-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 77, 184, 0.25);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(255, 77, 184, 0.12);
+}
+
+.mobile-template-image {
+  height: 160px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 77, 184, 0.35),
+    rgba(10, 10, 20, 0.95)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-template-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mobile-template-image span {
+  font-size: 56px;
+}
+
+.mobile-template-card h3 {
+  font-size: 15px;
+  line-height: 1.2;
+  margin: 10px 10px 6px;
+}
+
+.mobile-template-info {
+  padding: 0 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mobile-template-info strong {
+  color: #ff4db8;
+}
+
+/* PROFILE */
+.mobile-profile-card {
+  text-align: center;
+  padding: 25px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 77, 184, 0.2);
+}
+
+.mobile-profile-avatar {
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff4db8, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  font-weight: 900;
+}
+
+.mobile-vip-banner {
+  margin-top: 20px;
+  display: block;
+  padding: 16px;
+  text-decoration: none;
+  color: white;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ff4db8, #8b5cf6);
+}
+
+.mobile-wallet-card {
+  margin-top: 15px;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+}
+
+.mobile-profile-section {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 77, 184, 0.22);
+  box-shadow: 0 0 25px rgba(255, 77, 184, 0.12);
+}
+
+.mobile-profile-section h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.mobile-profile-section p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mobile-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.mobile-menu-list a,
+.mobile-menu-list button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 77, 184, 0.15);
+  color: white;
+  text-decoration: none;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.mobile-admin-link {
+  background: linear-gradient(135deg, #ff4db8, #8b5cf6) !important;
+  color: #fff !important;
+  font-weight: 900;
+}
+
+.mobile-empty {
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.mobile-search-box {
+  margin-top: 13px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 77, 184, 0.25);
+}
+
+.mobile-search-icon {
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.mobile-search-box input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.mobile-search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.mobile-search-clear {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+
+  border: none;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  margin: 0;
+
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+
+  font-size: 14px;
+  line-height: 1;
+
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.mobile-search-box {
+  overflow: hidden;
+}
+
+.mobile-search-box input {
+  flex: 1;
+  width: 100%;
+}
+
+.mobile-search-clear {
+  width: 28px !important;
+  height: 28px !important;
+
+  min-width: 28px !important;
+  max-width: 28px !important;
+
+  flex: 0 0 28px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border: none !important;
+  border-radius: 50% !important;
+
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #fff !important;
+
+  font-size: 14px !important;
+  line-height: 1 !important;
+}
+
+.mobile-header.only-search {
+  min-height: 72px;
+}
+
+.mobile-header.only-search + .mobile-content,
+.mobile-header.only-search ~ .mobile-content {
+  padding-top: 88px;
+}
+
+.mobile-home-hero {
+  padding: 24px 18px;
+  margin-bottom: 22px;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 77, 184, 0.22),
+    rgba(139, 92, 246, 0.12)
+  );
+  border: 1px solid rgba(255, 77, 184, 0.25);
+}
+
+.mobile-home-hero h1 {
+  font-size: 30px;
+  margin: 0 0 8px;
+}
+
+.mobile-home-hero p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.mobile-home-section {
+  margin-top: 26px;
+}
+
+.mobile-home-section h2 {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.mobile-home-row {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.mobile-home-card {
+  min-width: 145px;
+  max-width: 145px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 77, 184, 0.25);
+}
+
+.mobile-home-image {
+  height: 150px;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(
+    circle,
+    rgba(255, 77, 184, 0.35),
+    rgba(10, 10, 20, 0.95)
+  );
+}
+
+.mobile-home-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mobile-home-image span {
+  font-size: 46px;
+}
+
+.mobile-home-card h3 {
+  font-size: 14px;
+  padding: 10px 10px 4px;
+}
+
+.mobile-home-card p {
+  padding: 0 10px 12px;
+  color: #ff4db8;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.mobile-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  background: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(14px);
+}
+
+.mobile-template-modal,
+.mobile-limit-modal {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  padding: 24px;
+  border-radius: 26px;
+  text-align: center;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.04)
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(255, 77, 184, 0.25),
+      transparent 45%
+    );
+  border: 1px solid rgba(255, 77, 184, 0.32);
+  box-shadow: 0 0 35px rgba(255, 77, 184, 0.22);
+}
+
+.mobile-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  max-width: 32px !important;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.mobile-modal-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #ff4db8, #8b5cf6);
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.mobile-template-modal h2,
+.mobile-limit-modal h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.mobile-template-modal p,
+.mobile-limit-modal p {
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.45;
+}
+
+.mobile-modal-primary,
+.mobile-modal-secondary,
+.mobile-limit-actions button {
+  width: 100%;
+  min-height: 48px;
+  border-radius: 16px;
+  font-weight: 900;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.mobile-modal-primary {
+  background: linear-gradient(135deg, #ff1fa6, #ff4db8);
+}
+
+.mobile-modal-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 77, 184, 0.25);
+}
+
+.mobile-limit-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.mobile-limit-actions button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 77, 184, 0.25);
+}
+
+.mobile-limit-actions button:first-child {
+  background: linear-gradient(135deg, #ff1fa6, #ff4db8);
+}
+
+.mobile-limit-actions button:last-child {
+  grid-column: span 2;
+}
+
+.mobile-my-pages-list,
+.mobile-wallet-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.mobile-my-page-card,
+.mobile-wallet-balance,
+.mobile-wallet-pack {
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 77, 184, 0.22);
+  box-shadow: 0 0 25px rgba(255, 77, 184, 0.1);
+}
+
+.mobile-my-page-card h3 {
+  margin: 0 0 8px;
+}
+
+.mobile-my-page-card p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 14px;
+}
+
+.mobile-my-page-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.mobile-my-page-actions a {
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  padding: 12px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff4db8, #8b5cf6);
+  font-weight: 900;
+}
+
+.mobile-wallet-balance {
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-wallet-balance strong {
+  color: #ff4db8;
+  font-size: 24px;
+}
+
+.mobile-wallet-pack {
+  color: #fff;
+  text-align: left;
+}
+
+.mobile-wallet-pack span {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mobile-wallet-pack strong {
+  display: block;
+  margin: 8px 0;
+  font-size: 26px;
+  color: #ff4db8;
+}
+
+.mobile-wallet-pack small {
+  font-weight: 900;
+}
+
+.mobile-plan-summary,
+.mobile-template-group,
+.mobile-payment-card {
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 77, 184, 0.22);
+  box-shadow: 0 0 25px rgba(255, 77, 184, 0.1);
+}
+
+.mobile-plan-badge {
+  display: inline-flex;
+  margin-bottom: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 77, 184, 0.16);
+  color: #ff4db8;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.mobile-plan-head h2,
+.mobile-plan-summary h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.mobile-plan-summary p {
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.45;
+}
+
+.mobile-plan-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.mobile-plan-stats div {
+  padding: 12px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.mobile-plan-stats small {
+  display: block;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 11px;
+}
+
+.mobile-plan-stats strong {
+  color: #ff4db8;
+}
+
+.mobile-limit-warning {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255, 80, 120, 0.14);
+  border: 1px solid rgba(255, 80, 120, 0.28);
+}
+
+.mobile-limit-warning a {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  padding: 12px;
+  border-radius: 14px;
+  text-decoration: none;
+  background: linear-gradient(135deg, #ff4db8, #8b5cf6);
+  color: white;
+  font-weight: 900;
+}
+
+.mobile-panel-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.mobile-panel-tabs button {
+  padding: 12px 8px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border: 1px solid rgba(255, 77, 184, 0.18);
+  font-weight: 900;
+}
+
+.mobile-panel-tabs button.active {
+  background: linear-gradient(135deg, #ff4db8, #8b5cf6);
+}
+
+.mobile-template-groups,
+.mobile-payments-list {
+  display: grid;
+  gap: 14px;
+}
+
+.mobile-template-group-head {
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.mobile-template-group-head h3 {
+  margin: 0 0 4px;
+}
+
+.mobile-template-group-head p,
+.mobile-template-page-row p,
+.mobile-payment-card p,
+.mobile-payment-card small {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.mobile-template-pages {
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.mobile-template-page-row {
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.mobile-template-page-row h4 {
+  margin: 0 0 4px;
+}
+
+.mobile-template-page-actions,
+.mobile-plan-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.mobile-template-page-actions a,
+.mobile-plan-actions a,
+.mobile-empty-action {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  padding: 12px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff4db8, #8b5cf6);
+  font-weight: 900;
+}
+
+.mobile-payment-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mobile-payment-card h3 {
+  margin: 0 0 4px;
+}
+
+.mobile-payment-card strong {
+  display: block;
+  color: #ff4db8;
+  text-align: right;
+}
+
+.mobile-payment-status {
+  display: inline-flex;
+  margin-top: 8px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.mobile-payment-status.pending {
+  color: #facc15;
+}
+
+.mobile-payment-status.paid,
+.mobile-payment-status.approved {
+  color: #22c55e;
+}
+
+.mobile-payment-status.rejected {
+  color: #fb7185;
+}
+
+/* =========================
+   REWARDS MOBILE PREMIUM
+========================= */
+
+.mobile-rewards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mobile-reward-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 16px;
+  border-radius: 24px;
+
+  border: 1px solid rgba(255, 77, 184, 0.35);
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 77, 184, 0.18),
+      transparent 45%
+    ),
+    rgba(20, 10, 30, 0.88);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.mobile-reward-card small {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  background: #ff2fad;
+
+  color: #fff;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.mobile-reward-icon {
+  flex-shrink: 0;
+
+  width: 72px;
+  height: 72px;
+
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 38px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  box-shadow: 0 0 30px rgba(255, 77, 184, 0.25);
+}
+
+.mobile-reward-content {
+  flex: 1;
+  text-align: left;
+}
+
+.mobile-reward-content h3 {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.mobile-reward-content p {
+  margin: 8px 0;
+
+  font-size: 14px;
+  line-height: 1.45;
+
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.mobile-reward-content strong {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #ff3fbd;
+
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.mobile-reward-card button {
+  flex-shrink: 0;
+
+  min-width: 120px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  padding: 14px 16px;
+
+  background: linear-gradient(135deg, #ff2fad, #d400c5);
+
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 900;
+}
+
+/* HERO */
+
+.mobile-page-header {
+  padding: 22px;
+
+  border-radius: 24px;
+
+  border: 1px solid rgba(255, 77, 184, 0.35);
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 77, 184, 0.18),
+    rgba(255, 255, 255, 0.04)
+  );
+}
+
+.mobile-page-header h1 {
+  margin: 0;
+
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.mobile-page-header p {
+  margin-top: 10px;
+
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* WALLET */
+
+.mobile-wallet-card {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  margin: 14px 0 18px;
+
+  padding: 18px;
+
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 77, 184, 0.25);
+}
+
+.mobile-wallet-card span {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 214, 82, 0.14);
+
+  box-shadow: 0 0 30px rgba(255, 214, 82, 0.3);
+}
+
+.mobile-wallet-card strong {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.mobile-wallet-card p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* TABS */
+
+.mobile-rewards-tabs {
+  display: flex;
+  gap: 10px;
+
+  overflow-x: auto;
+
+  margin-bottom: 18px;
+}
+
+.mobile-rewards-tabs button {
+  flex-shrink: 0;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(255, 77, 184, 0.25);
+
+  background: rgba(255, 255, 255, 0.05);
+
+  color: #fff;
+
+  font-weight: 800;
+}
+
+.mobile-rewards-tabs button.active {
+  background: linear-gradient(135deg, #ff2fad, #8b2cff);
+
+  border: none;
+}
+
+.compact-rewards {
+  min-height: 100vh;
+  padding: 18px 16px 90px;
+  background: #050505;
+  color: #fff;
+}
+
+.compact-title {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.compact-wallet {
+  margin-bottom: 20px;
+}
+
+.compact-reward-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.compact-reward-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.compact-reward-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.compact-reward-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  color: #fff;
+}
+
+.compact-reward-left h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.compact-reward-left p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  font-weight: 800;
+  color: #ffd24d;
+}
+
+.compact-reward-item button {
+  min-width: 82px;
+  border: 0;
+  border-radius: 9px;
+  padding: 9px 15px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ff8a00, #ff2f6d);
+}
+
+.compact-reward-item.completed {
+  opacity: 0.55;
+}
+
+.compact-reward-item.completed button {
+  background: #333;
+}

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi panel | DEV AGS</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="panel-page">
+    <div data-include="/partials/header.html"></div>
+
+    <main class="panel-main">
+      <section class="panel-shell" aria-labelledby="panel-title">
+        <div class="panel-top">
+          <div>
+            <h1 id="panel-title">Mi panel</h1>
+            <p>Administra tus páginas, planes y pagos</p>
+          </div>
+          <a class="button button-primary panel-create" href="/templates/">
+            <span aria-hidden="true">+</span>
+            Crear página
+          </a>
+        </div>
+
+        <div class="panel-tabs" role="tablist" aria-label="Secciones del panel">
+          <button
+            class="active"
+            type="button"
+            role="tab"
+            data-panel-tab="pages"
+          >
+            Mis Páginas <span>0</span>
+          </button>
+          <button type="button" role="tab" data-panel-tab="plans">
+            Mis planes
+          </button>
+          <button type="button" role="tab" data-panel-tab="payments">
+            Pagos
+          </button>
+        </div>
+
+        <div class="panel-content active" data-panel-content="pages">
+          <div class="empty-panel large">
+            <div class="empty-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 8h14v12H5zM8 8V5h8v3M8 12h8" />
+              </svg>
+            </div>
+            <h2>Aún no tienes páginas</h2>
+            <p>Crea tu primera página personalizada en minutos</p>
+            <a class="button button-primary" href="/templates/">
+              <span aria-hidden="true">+</span>
+              Crear mi primera página
+            </a>
+          </div>
+        </div>
+
+        <div class="panel-content" data-panel-content="plans">
+          <div class="plan-panel-section">
+            <div class="panel-section-heading">
+              <h2>
+                <span class="panel-mini-icon cart"></span>Páginas compradas
+              </h2>
+              <a href="/index.html#planes">Comprar más →</a>
+            </div>
+            <div class="empty-panel compact">
+              <p>No tienes compras de páginas</p>
+              <a href="/index.html#planes">Ver planes de pago único →</a>
+            </div>
+          </div>
+
+          <div class="plan-panel-section">
+            <div class="panel-section-heading">
+              <h2>
+                <span class="panel-mini-icon refresh"></span>Suscripciones
+              </h2>
+              <a href="/index.html#planes">Mejorar plan mensual →</a>
+            </div>
+            <div class="empty-panel compact">
+              <p>No tienes suscripciones activas</p>
+              <a href="/index.html#planes">Ver planes mensuales →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-content" data-panel-content="payments">
+          <div class="empty-panel large payments-empty">
+            <div class="empty-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 3h10v4H7zM5 7h14v14H5zM9 12h6M9 16h4" />
+              </svg>
+            </div>
+            <h2>No tienes pagos registrados</h2>
+            <p>Tus pagos aparecerán aquí</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="../app.js"></script>
+  </body>
+</html>

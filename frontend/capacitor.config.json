@@ -1,0 +1,13 @@
+{
+  "appId": "com.devags.app",
+  "appName": "DEV AGS",
+  "webDir": "dist",
+  "server": {
+    "cleartext": true
+  },
+  "plugins": {
+    "CapacitorHttp": {
+      "enabled": true
+    }
+  }
+}

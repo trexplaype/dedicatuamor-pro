@@ -1,0 +1,555 @@
+/* ======================================================
+   RESPONSIVE GENERAL - DEV AGS CLEAN
+   IMPORTANTE:
+   Aquí NO se controla el header.
+   El header solo debe manejarse en header.css
+====================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+main,
+section,
+article,
+aside,
+footer,
+div {
+  max-width: 100%;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+  .plans-grid,
+  .steps-line,
+  .stats-new {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .steps-line::before {
+    display: none;
+  }
+
+  .hero-new h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-new {
+    grid-template-columns: 1fr !important;
+    padding: 110px 32px 80px;
+    text-align: center;
+  }
+
+  .hero-new-content {
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hero-new p {
+    max-width: 620px;
+    margin: auto;
+  }
+
+  .plans-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden !important;
+  }
+
+  .dashboard-page,
+  .home-page,
+  .templates-page,
+  .checkout-page,
+  .rewards-page,
+  .subscribe-page,
+  .panel-page {
+    width: 100% !important;
+    padding: 84px 12px 32px !important;
+    overflow-x: hidden !important;
+  }
+
+  .wallet-page {
+    width: 100% !important;
+    padding: 84px 12px 32px !important;
+    overflow-x: hidden !important;
+  }
+
+  .dashboard-card,
+  .panel-card,
+  .template-card,
+  .wallet-card,
+  .payment-card,
+  .checkout-card,
+  .subscribe-premium-box,
+  .premium-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .hero-new {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+    padding: 96px 18px 56px !important;
+    text-align: center !important;
+  }
+
+  .hero-new-content {
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-new h1 {
+    font-size: clamp(2.3rem, 11vw, 3.4rem) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -1.5px !important;
+  }
+
+  .hero-new p {
+    font-size: 0.98rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .hero-image img {
+    max-width: 360px !important;
+  }
+
+  .hero-new-actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    width: 100%;
+  }
+
+  .hero-new-actions .button {
+    width: 100% !important;
+  }
+
+  .hero-mini-list {
+    justify-content: center !important;
+    gap: 9px !important;
+    margin-top: 18px !important;
+    font-size: 0.75rem !important;
+  }
+
+  .section-top,
+  .templates-new-top,
+  .panel-top {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 0 4px !important;
+    gap: 12px !important;
+  }
+
+  .section-heading h2,
+  .subscribe-title,
+  .panel-top h1 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  .section-heading p,
+  .final-cta p,
+  .panel-top p {
+    font-size: 0.95rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .plans-grid,
+  .templates-grid,
+  .wallet-plans-grid,
+  .coins-grid,
+  .coins-grid-4,
+  .steps-line,
+  .cards-grid,
+  .admin-grid,
+  .stats-new {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .plan,
+  .wallet-card,
+  .step-card,
+  .step-new,
+  .template-card,
+  .payment-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .plan.highlighted,
+  .wallet-plans-grid .plan.highlighted {
+    transform: none !important;
+  }
+
+  .plan {
+    min-height: auto !important;
+    padding: 24px !important;
+  }
+
+  .plan-price-clean strong {
+    font-size: 2.5rem !important;
+  }
+
+  .coin-card {
+    min-height: 220px !important;
+  }
+
+  .wallet-balance strong {
+    font-size: 2.5rem !important;
+  }
+
+  button:not(.coin-card)
+    :not(.icon-button)
+    :not(.mobile-toggle)
+    :not(.menu-toggle)
+    :not(.hamburger)
+    :not(.mobile-menu-btn)
+    :not(.mobile-search-clear),
+  .button,
+  .wallet-btn-primary,
+  .wallet-btn-secondary,
+  .confirm-premium-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  input,
+  textarea,
+  select {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .wallet-actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  table {
+    width: 100% !important;
+    min-width: 650px;
+  }
+
+  .table-wrapper,
+  .admin-table-wrapper,
+  .payments-table-wrapper {
+    width: 100% !important;
+    overflow-x: auto !important;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr !important;
+    padding: 40px 20px !important;
+    gap: 28px !important;
+  }
+}
+
+/* =========================
+   AUTH FIX MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .auth-main,
+  .forgot-page {
+    padding: 76px 14px 2rem !important;
+  }
+
+  .auth-card,
+  .forgot-card {
+    width: 100% !important;
+    max-width: 420px !important;
+  }
+
+  .password-wrap {
+    position: relative !important;
+  }
+
+  .password-wrap input {
+    padding-right: 58px !important;
+  }
+
+  .password-wrap .icon-button {
+    position: absolute !important;
+    top: 50% !important;
+    right: 10px !important;
+    left: auto !important;
+    transform: translateY(-50%) !important;
+
+    width: 38px !important;
+    min-width: 38px !important;
+    max-width: 38px !important;
+
+    height: 38px !important;
+    min-height: 38px !important;
+    max-height: 38px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    z-index: 20 !important;
+  }
+}
+
+/* =========================
+   SUBSCRIBE MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .subscribe-premium-box {
+    width: 100% !important;
+    margin: 16px auto !important;
+    padding: 28px 14px !important;
+    border-radius: 24px !important;
+  }
+
+  .subscribe-badge {
+    margin-bottom: 16px !important;
+    padding: 7px 14px !important;
+    font-size: 10px !important;
+  }
+
+  .subscribe-title {
+    font-size: clamp(2rem, 9vw, 2.6rem) !important;
+    line-height: 1.05 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .subscribe-description {
+    font-size: 0.9rem !important;
+    margin-bottom: 22px !important;
+  }
+
+  .premium-card {
+    padding: 22px 16px !important;
+    border-radius: 22px !important;
+  }
+
+  .premium-icon {
+    width: 66px !important;
+    height: 66px !important;
+    font-size: 30px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .premium-card h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 14px !important;
+  }
+
+  .premium-price {
+    font-size: clamp(2.7rem, 13vw, 3.2rem) !important;
+    margin-bottom: 4px !important;
+  }
+
+  .premium-divider {
+    margin: 16px 0 !important;
+  }
+
+  .premium-card h3 {
+    font-size: 0.95rem !important;
+    margin-bottom: 12px !important;
+  }
+
+  .premium-features {
+    gap: 8px !important;
+  }
+
+  .premium-features li {
+    font-size: 0.86rem !important;
+  }
+
+  .confirm-premium-btn {
+    margin-top: 22px !important;
+    padding: 15px 12px !important;
+    font-size: 0.9rem !important;
+    border-radius: 15px !important;
+  }
+
+  .secure-text {
+    margin-top: 12px !important;
+    font-size: 0.78rem !important;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 420px) {
+  .dashboard-page,
+  .home-page,
+  .templates-page,
+  .wallet-page,
+  .checkout-page,
+  .rewards-page,
+  .subscribe-page,
+  .panel-page {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .hero-new h1 {
+    font-size: 2.45rem !important;
+  }
+
+  .hero-image img {
+    max-width: 310px !important;
+  }
+
+  .subscribe-premium-box {
+    padding: 24px 10px !important;
+  }
+
+  .premium-card {
+    padding: 18px 12px !important;
+  }
+
+  .subscribe-title {
+    font-size: 2rem !important;
+  }
+
+  .premium-price {
+    font-size: 2.5rem !important;
+  }
+
+  .premium-features li {
+    font-size: 0.82rem !important;
+  }
+
+  .confirm-premium-btn {
+    font-size: 0.85rem !important;
+    padding: 14px 10px !important;
+  }
+}
+
+/* =========================
+   CARRUSEL MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .slider-arrow,
+  .carousel-arrow,
+  .templates-arrow,
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 38px !important;
+    height: 38px !important;
+
+    border-radius: 50% !important;
+    background: rgba(25, 20, 45, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 90, 190, 0.22);
+    color: white !important;
+    z-index: 20 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+
+  .slider-arrow.prev,
+  .carousel-arrow.prev,
+  .templates-arrow.prev,
+  .swiper-button-prev {
+    left: 10px !important;
+  }
+
+  .slider-arrow.next,
+  .carousel-arrow.next,
+  .templates-arrow.next,
+  .swiper-button-next {
+    right: 10px !important;
+  }
+
+  .slider-dots,
+  .carousel-dots,
+  .templates-dots,
+  .swiper-pagination {
+    margin-top: 18px !important;
+  }
+}
+
+/* =========================
+   FIX PLANES DESKTOP WIDTH
+========================= */
+
+@media (min-width: 1025px) {
+  .dashboard-page {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  .subscribe-premium-box {
+    width: min(1280px, calc(100% - 2rem)) !important;
+    max-width: 1280px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+    overflow: hidden !important;
+  }
+
+  .plans-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+  }
+
+  .plan {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

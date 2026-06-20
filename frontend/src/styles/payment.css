@@ -1,0 +1,270 @@
+/* =========================
+   PAYMENT - Premium Liquid Glass
+========================= */
+
+.payment-panel {
+  margin-top: 2rem;
+  padding: 2rem;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    ),
+    radial-gradient(circle at 80% 20%, rgba(255, 47, 168, 0.1), transparent 35%);
+
+  border: 1px solid rgba(255, 90, 190, 0.28);
+
+  box-shadow:
+    0 0 22px rgba(255, 20, 157, 0.22),
+    0 24px 70px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(26px);
+  -webkit-backdrop-filter: blur(26px);
+}
+
+/* HEADER */
+
+.payment-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.payment-mini {
+  color: var(--accent-pink);
+  font-size: 0.75rem;
+  font-weight: 950;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.close-payment {
+  width: 46px;
+  height: 46px;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  color: #fff;
+  font-size: 1rem;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+  );
+
+  border: 1px solid rgba(255, 90, 190, 0.24);
+
+  box-shadow: 0 0 16px rgba(255, 20, 157, 0.18);
+
+  transition: 0.22s ease;
+}
+
+.close-payment:hover {
+  transform: rotate(90deg);
+  box-shadow: 0 0 24px rgba(255, 20, 157, 0.35);
+}
+
+/* PACK INFO */
+
+.payment-pack-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.payment-pack-card {
+  padding: 1.4rem;
+  border-radius: 24px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+
+  border: 1px solid rgba(255, 90, 190, 0.22);
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  transition: 0.25s ease;
+}
+
+.payment-pack-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 90, 190, 0.45);
+}
+
+.payment-pack-card span {
+  display: block;
+  margin-bottom: 0.6rem;
+
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.payment-pack-card strong {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 950;
+}
+
+/* QR SECTION */
+
+.payment-qr-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  margin-bottom: 2rem;
+}
+
+.yape-qr {
+  width: 240px;
+  padding: 1rem;
+
+  border-radius: 24px;
+
+  background: #fff;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.payment-yape-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.payment-yape-info p {
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}
+
+.payment-yape-info strong {
+  color: var(--accent-pink);
+  font-size: 2.2rem;
+  font-weight: 950;
+
+  text-shadow: 0 0 20px rgba(255, 47, 168, 0.35);
+}
+
+/* ACTIONS */
+
+.payment-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.checkout-operation {
+  width: 100%;
+}
+
+.checkout-operation label {
+  display: block;
+  margin-bottom: 0.5rem;
+
+  color: #fff;
+  font-weight: 900;
+}
+
+.checkout-operation input {
+  width: 100%;
+  padding: 1rem;
+
+  border-radius: 18px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+  );
+
+  border: 1px solid rgba(255, 90, 190, 0.22);
+
+  color: #fff;
+  font-size: 1rem;
+
+  outline: none;
+
+  transition: 0.22s ease;
+}
+
+.checkout-operation input:focus {
+  border-color: rgba(255, 90, 190, 0.55);
+
+  box-shadow: 0 0 22px rgba(255, 20, 157, 0.3);
+}
+
+.checkout-operation small {
+  display: block;
+  margin-top: 0.6rem;
+
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+}
+
+/* STATUS MESSAGE */
+
+.payment-status {
+  margin-top: 1.5rem;
+  padding: 1rem;
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 90, 190, 0.18);
+
+  color: #fff;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .payment-panel {
+    padding: 1.4rem;
+    border-radius: 24px;
+  }
+
+  .payment-panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .payment-pack-info {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-qr-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .yape-qr {
+    width: 200px;
+  }
+
+  .payment-yape-info strong {
+    font-size: 1.8rem;
+  }
+
+  .payment-actions {
+    flex-direction: column;
+  }
+}

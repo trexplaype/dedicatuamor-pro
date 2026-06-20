@@ -1,0 +1,296 @@
+/* =========================
+   PLANS - DEV AGS Premium Wide Compact
+========================= */
+
+.plans-section {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 6rem 0;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 20, 157, 0.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(139, 92, 246, 0.12),
+      transparent 35%
+    );
+}
+
+.subscribe-premium-box {
+  width: min(1400px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 48px;
+  border-radius: 40px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 77, 184, 0.25);
+  backdrop-filter: blur(30px);
+  box-shadow:
+    0 0 40px rgba(255, 77, 184, 0.2),
+    0 30px 120px rgba(0, 0, 0, 0.5);
+}
+
+.section-heading {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.section-heading.centered {
+  text-align: center;
+  place-items: center;
+}
+
+.section-heading h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1;
+  letter-spacing: -3px;
+  background: linear-gradient(90deg, var(--accent-pink), #ffd8f2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-heading p {
+  max-width: 650px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1.05rem;
+}
+
+.plans-loading {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 800;
+}
+
+.plans-grid {
+  width: 100%;
+  margin: 2.6rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(260px, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.plan {
+  position: relative;
+  min-height: 760px;
+  padding: 26px 22px 22px;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(255, 47, 168, 0.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    );
+  border: 1px solid rgba(255, 47, 168, 0.45);
+  box-shadow:
+    0 0 22px rgba(255, 47, 168, 0.22),
+    0 26px 80px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.plan::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    transparent 30%,
+    transparent 70%,
+    rgba(255, 255, 255, 0.06)
+  );
+  pointer-events: none;
+}
+
+.plan:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 90, 190, 0.55);
+  box-shadow:
+    0 0 35px rgba(255, 47, 168, 0.34),
+    0 30px 90px rgba(0, 0, 0, 0.5);
+}
+
+.plan.highlighted {
+  border: 1px solid rgba(255, 90, 190, 0.65);
+  box-shadow:
+    0 0 35px rgba(255, 20, 157, 0.35),
+    0 0 90px rgba(255, 20, 157, 0.14);
+}
+
+.plan-badge {
+  width: 100%;
+  min-height: 32px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff4db8;
+  font-size: 0.86rem;
+  font-weight: 950;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 77, 184, 0.35);
+  backdrop-filter: blur(14px);
+}
+
+.plan-duration-badge {
+  position: absolute;
+  top: 52px;
+  right: 18px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.55rem;
+  font-weight: 950;
+  background: linear-gradient(180deg, #ff2fa8, #c70f72);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 0 24px rgba(255, 47, 168, 0.45);
+  z-index: 2;
+}
+
+.plan h3 {
+  margin: 24px 0 20px;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 950;
+  line-height: 1.05;
+}
+
+.plan-price-clean {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 26px;
+}
+
+.plan-coin-icon {
+  font-size: 48px;
+  filter: drop-shadow(0 0 13px rgba(255, 196, 0, 0.95))
+    drop-shadow(0 0 30px rgba(255, 196, 0, 0.45));
+}
+
+.plan-price-clean strong {
+  font-size: 3.5rem;
+  color: #fff;
+  font-weight: 950;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.free-price {
+  font-size: 3rem !important;
+  color: #fff;
+}
+
+.price-label {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  font-weight: 850;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  flex: 1;
+}
+
+.plan-features li {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.98rem;
+  line-height: 1.35;
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+}
+
+.plan-features li::before {
+  content: "✓";
+  width: 21px;
+  height: 21px;
+  min-width: 21px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 950;
+  background: linear-gradient(135deg, #ff2fa8, #ff5fc1);
+  box-shadow: 0 0 14px rgba(255, 47, 168, 0.42);
+}
+
+.plan-button {
+  width: 100%;
+  min-height: 58px;
+  margin-top: 26px;
+  border-radius: 14px;
+  font-size: 1.05rem;
+  font-weight: 950;
+  background: linear-gradient(90deg, #ff1fa6, #ff5fc1);
+  box-shadow: 0 0 26px rgba(255, 47, 168, 0.42);
+}
+
+.plan-button:disabled {
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: none;
+  cursor: default;
+}
+
+@media (max-width: 1200px) {
+  .subscribe-premium-box {
+    width: min(940px, calc(100% - 2rem));
+    padding: 36px;
+  }
+
+  .plans-grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .subscribe-premium-box {
+    width: min(520px, calc(100% - 2rem));
+    padding: 26px 18px;
+    border-radius: 28px;
+  }
+
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plan {
+    min-height: auto;
+  }
+
+  .plan-duration-badge {
+    position: static;
+    width: max-content;
+    margin: 12px 0 0 auto;
+  }
+
+  .plan-price-clean strong {
+    font-size: 2.8rem;
+  }
+}

@@ -1,0 +1,22 @@
+@import "./styles/base.css";
+
+/* Layout */
+@import "./styles/header.css";
+@import "./styles/footer.css";
+
+/* UI */
+@import "./styles/buttons.css";
+
+/* Pages */
+@import "./styles/home.css";
+@import "./styles/templates.css";
+@import "./styles/plans.css";
+@import "./styles/wallet.css";
+@import "./styles/panel.css";
+@import "./styles/payment.css";
+@import "./styles/subscribe.css";
+@import "./styles/auth.css";
+@import "./styles/admin.css";
+
+/* Responsive SIEMPRE AL FINAL */
+@import "./styles/responsive.css";
