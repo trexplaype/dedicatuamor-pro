@@ -1,17 +1,10 @@
 import { CapacitorHttp } from "@capacitor/core";
 
-const hostname = window.location.hostname;
 const isCapacitor = window.Capacitor?.isNativePlatform?.();
 
-let API_URL;
-
-if (isCapacitor) {
-  API_URL = "http://10.0.2.2:8000";
-} else if (hostname === "localhost" || hostname === "127.0.0.1") {
-  API_URL = "http://127.0.0.1:8000";
-} else {
-  API_URL = "http://10.143.112.198:8000";
-}
+const API_URL = isCapacitor
+  ? "http://10.0.2.2:8000"
+  : import.meta.env.VITE_API_URL || "https://api.ebookpackstore.com";
 
 export async function request(endpoint, options = {}) {
   const token = localStorage.getItem("apiToken");
@@ -56,6 +49,7 @@ export async function request(endpoint, options = {}) {
 
   const response = await fetch(url, {
     ...options,
+    method,
     headers,
   });
 
